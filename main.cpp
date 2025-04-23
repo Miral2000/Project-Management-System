@@ -1,22 +1,22 @@
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 
-class project {
+class Task {
 public:
-    string name, startdate, enddate, description;
+    string taskname, statetask, enddate,;  //ÇÓã ÇáãåãÉ æÍÇáÊåÇ æÊÇÑíÎ ÇäÊåÇÁ
 
     void input() {
         try {
-            cout << "enter the name of project: ";
-            getline(cin, name);
-            cout << "enter the start date: ";
-            getline(cin, startdate);
+            cout << "enter the name of Task: ";
+            getline(cin, taskname);
+            cout << "enter the statetask: ";
+            getline(cin, statetask);
             cout << "enter the end date: ";
             getline(cin, enddate);
-            cout << "enter the description: ";
-            getline(cin, description);
+
         }
         catch (const exception& e) {
             cout << "the are error: " << e.what() << endl;
@@ -25,10 +25,9 @@ public:
 
     void display() {
         try {
-            cout << "\nthe name of project is: " << name << endl;
-            cout << "the description of project is: " << description << endl;
-            cout << "the start date of project is: " << startdate << endl;
-            cout << "the end date of project is: " << enddate << endl;
+            cout << "\nthe name of of Task is: " << taskname << endl;
+            cout << "the statetask of Task is: " << statetask << endl;
+            cout << "the end date of Task is: " << enddate << endl;
         }
         catch (const exception& e) {
             cout << "the are error: " << e.what() << endl;
@@ -39,23 +38,23 @@ public:
 int main() {
     try {
 
-        project pro[100];
+        Task task[100];
         int c = 0;
         char x = 'y';
 
         while ((x == 'y' || x == 'Y')){
-            pro[c].input();
+            task[c].input();
             c++;
 
-            cout << "do you want to add another project? (y/n): ";
+            cout << "do you want to add another Task? (y/n): ";
             cin >> x;
             cin.ignore();
         }
 
 
         for (int i = 0; i < c; i++) {
-                cout<<"the information of  project "<<i+1<<" is:\n";
-            pro[i].display();
+                cout<<"the information of  Task "<<i+1<<" is:\n";
+            task[i].display();
         }
     }
     catch (const exception& e) {
